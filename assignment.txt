@@ -1,0 +1,570 @@
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~
+$ cd desktop
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop
+$ cd shellscripting/
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting
+$ cd file
+bash: cd: file: No such file or directory
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting
+$ cd a
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a
+$ cd files/
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ touch b1.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano b1.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ cat b1.sh
+a=10;
+b=20;
+c=$((a+b));
+echo $c;
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash b1.sh
+30
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for i in 1 2 3 4 5
+> do
+> echo "welcome $i"
+> done
+welcome 1
+welcome 2
+welcome 3
+welcome 4
+welcome 5
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ touch sub.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano sub.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ cat sub.sh
+a=10;
+b=20;
+c=$((a-b));
+echo $c;
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash sub.sh
+-10
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for a in 1 2 3 4 5;
+> do
+> echo "welcome";
+> done
+welcome
+welcome
+welcome
+welcome
+welcome
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ls *.txt
+GITCMD.txt  a.txt  r.txt  raj.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ rm *.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ls
+Object.class  b1.sh  c.csv  d.pdf  e.java  f.py  sub.sh  trail.csv
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in 'ls *.txt'
+> do
+> echo $ file;
+> done
+$ file
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ touch day3.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ls *.txt
+day3.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for f in 'ls *.txt'
+> do
+> echo $f;
+> done
+ls day3.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in 'ls *.txt';
+> do
+> fd = `echo $f | awk -f . '{print $1}'`;
+> echo $fd;
+> done
+awk: .:1: error: can't read sourcefile `.' (Is a directory)
+bash: fd: command not found
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in `ls *.txt`;
+> do
+> fd = `echo $f | awk -f . '{print $1}'`;
+> echo $fd;
+> done
+awk: .:1: error: can't read sourcefile `.' (Is a directory)
+bash: fd: command not found
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ls *.txt
+day3.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in `ls *.txt`; do
+> fd= `echo $f | awk -F.'{print $1}'`;
+> echo $fd;
+> done
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:          GNU long options: (standard)
+        -f progfile             --file=progfile
+        -F fs                   --field-separator=fs
+        -v var=val              --assign=var=val
+Short options:          GNU long options: (extensions)
+        -b                      --characters-as-bytes
+        -c                      --traditional
+        -C                      --copyright
+        -d[file]                --dump-variables[=file]
+        -D[file]                --debug[=file]
+        -e 'program-text'       --source='program-text'
+        -E file                 --exec=file
+        -g                      --gen-pot
+        -h                      --help
+        -i includefile          --include=includefile
+        -l library              --load=library
+        -L[fatal|invalid]       --lint[=fatal|invalid]
+        -M                      --bignum
+        -N                      --use-lc-numeric
+        -n                      --non-decimal-data
+        -o[file]                --pretty-print[=file]
+        -O                      --optimize
+        -p[file]                --profile[=file]
+        -P                      --posix
+        -r                      --re-interval
+        -s                      --no-optimize
+        -S                      --sandbox
+        -t                      --lint-old
+        -V                      --version
+
+To report bugs, see node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+        gawk '{ sum += $1 }; END { print sum }' file
+        gawk -F: '{ print $1 }' /etc/passwd
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ^C
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for f in file1 file2 file3 file5
+> do
+>  echo "Processing $f"
+>  # do something on $f
+> done
+Processing file1
+Processing file2
+Processing file3
+Processing file5
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for f in `ls *.txt`
+> do
+> echo "processing $f"
+> done
+processing day3.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in `ls *.txt`;
+> do
+> fd = `echo $f | awk -F . '{print $1}'`;
+> echo $fd;
+> done
+bash: fd: command not found
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in `ls *.txt`
+> do
+> fd = `echo $f | awk -F. '{print $1}'`;
+> echo $fd;
+> done
+bash: fd: command not found
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in `ls *.txt` do fd = `echo $f | awk -F. '{print $1}'` echo $fd; done
+bash: syntax error near unexpected token `done'
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for files in `ls *.txt`;
+> do
+> fd = `echo $f | awk -F. '{print $1}'`;
+> mkdir day3
+> done
+bash: fd: command not found
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in `ls *.txt`
+> do
+> foldername = `echo file|awk -F . '{print $1}'`;
+> echo $foldername;
+> done
+bash: foldername: command not found
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ for file in 'ls *.txt'; do foldername = `echo file|awk -F . '{print $1}'`; echo $foldername; done
+bash: foldername: command not found
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ls
+Object.class  c.csv  day3/     e.java  sub.sh
+b1.sh         d.pdf  day3.txt  f.py    trail.csv
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ touch program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+program.sh: line 4: syntax error near unexpected token `|'
+program.sh: line 4: `foldername = `echo $file | awk -F. '{print $1}'`;'
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+program.sh: line 4: foldername: command not found
+rm: missing operand
+Try 'rm --help' for more information.
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+cp: missing destination file operand after 'day3.txt'
+Try 'cp --help' for more information.
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+program.sh: line 4: foldername: command not found
+rm: missing operand
+Try 'rm --help' for more information.
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+cp: missing file operand
+Try 'cp --help' for more information.
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ rm
+rm: missing operand
+Try 'rm --help' for more information.
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+program.sh: line 4: foldername: command not found
+rm: missing operand
+Try 'rm --help' for more information.
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+cp: 'day3.txt' and './day3.txt' are the same file
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+program.sh: line 4: foldername: command not found
+rm: missing operand
+Try 'rm --help' for more information.
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+cp: 'day3.txt' and './day3.txt' are the same file
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+program.sh: line 4: foldername: command not found
+rm: missing operand
+Try 'rm --help' for more information.
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+cp: missing destination file operand after 'day3.txt'
+Try 'cp --help' for more information.
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+Use --reflink=never to ensure a standard copy is performed.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ git clone https://github.com/edureka
+Cloning into 'edureka'...
+remote: Not Found
+fatal: repository 'https://github.com/edureka/' not found
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ git clone
+fatal: You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    --reject-shallow      don't clone shallow repository
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    --recursive ...       alias of --recurse-submodules
+    -j, --jobs <n>        number of submodules cloned in parallel
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --reference-if-able <repo>
+                          reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --shallow-since <time>
+                          create a shallow clone since a specific time
+    --shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --single-branch       clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --shallow-submodules  any cloned submodules will be shallow
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+    --server-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --filter <args>       object filtering
+    --remote-submodules   any cloned submodules will use their remote-tracking branch
+    --sparse              initialize sparse-checkout file to include only files at root
+
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ gitclone https://github.com/edurekavivekh/linux-content
+bash: gitclone: command not found
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ git clone https://github.com/edurekavivekh/linux-content
+Cloning into 'linux-content'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 0), reused 7 (delta 0), pack-reused 1
+Receiving objects: 100% (9/9), 12.22 MiB | 1.55 MiB/s, done.
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ ls
+Object.class  c.csv  day3/     e.java  linux-content/  sub.sh
+b1.sh         d.pdf  day3.txt  f.py    program.sh      trail.csv
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ cd linux-content/
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ ls -l
+total 14805
+-rw-r--r-- 1 shiv nandan 197121      15 Apr 28 15:58 README.md
+-rw-r--r-- 1 shiv nandan 197121  826022 Apr 28 15:58 access.log
+-rw-r--r-- 1 shiv nandan 197121     946 Apr 28 15:58 data.csv
+-rw-r--r-- 1 shiv nandan 197121 8260403 Apr 28 15:58 linux_chit_sheet.pdf
+-rw-r--r-- 1 shiv nandan 197121 6065809 Apr 28 15:58 linux_problem_sheet.pdf
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ nano data.csv
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ head 3 fruits.txt
+head: cannot open '3' for reading: No such file or directory
+head: cannot open 'fruits.txt' for reading: No such file or directory
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ cd ..
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ nano program.sh
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ bash program.sh
+file: day3.txt
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ cat data.csv
+cat: data.csv: No such file or directory
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files
+$ cd linux-content/
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ cat data.csv
+Id EmployeeName JobTitle        BasePay OvertimePay OtherPay TotalPay TotalPayBenefits
+1  NATHANIEL    GM              167411  0           400184   567595   567595
+2  GARY         CAPTAIN         155966  245131      137811   538909   538909
+3  ALBERT       CAPTAIN         212739  106088      16452    335279   335279
+4  CHRISTOPHER  MECHANIC        77916   56120       198306   332343   332343
+5  PATRICK      DEPUTYCHIEF     134401  9737        182234   326373   326373
+6  DAVID        ASSTDEPUTY      118602  8601        189082   316285   316285
+7  ALSON        BATTALIONCHIEF  92492   89062       134426   315981   315981
+8  DAVID        DEPUTYDIRECTOR  256576  0           51322    307899   307899
+10 JOANNE       CHIEF           285262  0           17115    302377   302377
+12 PATRICIA     CAPTAIN         99722   87082       110804   297608   297608
+13 EDWARD       EXECUTIVE       294580  0           0        294580   294580
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ echo hello world
+hello world
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ echo hello world | awk '{print $1";
+> ;
+>
+>
+> ^C
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ echo hello world | awk '{print $1}'
+hello
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ cat data.csv | grep -i captain | awk '{print $7}'
+538909
+335279
+297608
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$ bg%2
+bash: bg%2: command not found
+
+shiv nandan@LAPTOP-IVVRRBGD MINGW64 ~/desktop/shellscripting/a/files/linux-content (master)
+$
